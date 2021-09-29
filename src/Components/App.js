@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import FeedbackOptions from './FeedbackOptions';
+import FeedbackOptions from './feedbackOptions/FeedbackOptions';
 import Notification from './Notification';
 import Section from './Section';
-import Statistics from './Statistics';
+import Statistics from '../statistics/Statistics';
+import GlobalStyles from '../styles/globalStyles';
 
 class App extends Component {
     static defaultProps = {
@@ -43,6 +44,7 @@ class App extends Component {
     render() {
         return (
             <main>
+                <GlobalStyles></GlobalStyles>
                 <Section title="Please leave feedback">
                     <FeedbackOptions onLeaveFeedback={this.countFeedback}/>
                 </Section>
