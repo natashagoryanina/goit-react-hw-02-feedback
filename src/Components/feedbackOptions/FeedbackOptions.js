@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ButtonContainer } from './FeedbackOptionsStyled';
 
-const FeedbackOptions = ({onLeaveFeedback}) => {
+const FeedbackOptions = ({options, onLeaveFeedback}) => {
     return (
         <ButtonContainer>
-            <button className="btn" name="good" type="button" onClick={onLeaveFeedback}>Good</button>
-            <button className="btn" name="neutral" type="button" onClick={onLeaveFeedback}>Neutral</button>
-            <button className="btn" name="bad" type="button" onClick={onLeaveFeedback}>Bad</button>
+            {Object.keys(options).map((key) => 
+                <button className="btn" name={key} type="button" onClick={onLeaveFeedback}>{key}</button>
+            )}
         </ButtonContainer>
     );
 };
